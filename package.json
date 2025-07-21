@@ -1,34 +1,9 @@
-{
-  "name": "mariachi-farra-website",
-  "version": "1.0.0",
-  "description": "Sitio web oficial del grupo Mariachi Farra",
-  "main": "index.html",
-  "scripts": {
-    "start": "npx live-server --port=3000 --open=/index.html",
-    "dev": "npx live-server --port=3000 --open=/index.html --watch=.",
-    "build": "echo 'No build step required for static HTML site'",
-    "deploy": "echo 'Ready for deployment to web server'"
-  },
-  "keywords": [
-    "mariachi",
-    "música",
-    "mexican",
-    "traditional",
-    "website",
-    "events",
-    "wedding",
-    "quinceañera"
-  ],
-  "author": "Mariachi Farra",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/usuario/MariachiFarra.git"
-  },
-  "devDependencies": {
-    "live-server": "^1.2.2"
-  },
-  "browserslist": [
+"scripts": {
+  "start": "npx live-server --port=3000 --open=/index.html",
+  "dev": "npx live-server --port=3000 --open=/index.html --watch=.",
+  "build": "mkdir -p public && cp -r * public && rm -rf public/{node_modules,.git,package.json,package-lock.json}",
+  "deploy": "npm run build"
+}
     "> 1%",
     "last 2 versions",
     "not dead"
