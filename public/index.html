@@ -67,36 +67,38 @@
                     <p class="hero-subtitle">Serenatas y bodas, quinceañeras sin parra</p>
                    <p class="hero-description">Todo evento especial con Mariachi Farra</p>
                     <div class="hero-buttons">
-                        <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+                        <a href="#contacto" class="btn btn-primary" id="btn-contacto">Contáctanos</a>
                         <a href="#repertorio" class="btn btn-secondary">Nuestro Repertorio</a>
                     </div>
                 </div>
                 <img src="mariachi-grupo.png" alt="Grupo de mariachis con trajes tradicionales" class="mariachi-full-image transparent-image hero-img-front hero-img-right">
             </div>
             <div id="texto3d" class="text-3d-section">
-                <div class="stage">
-                    <!-- Aquí van las capas del texto 3D -->
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                </div>
+              <div class="stage">
+                <!-- Texto 3D animado con colores de la página -->
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+                <div class="layer"></div>
+              </div>
             </div>
         </div>
     </section>
@@ -139,7 +141,7 @@
                     
                     <div class="stats">
                         <div class="stat">
-                            <h4>500+</h4>
+                            <h4>583+</h4>
                             <p>Eventos realizados</p>
                         </div>
                         <div class="stat">
@@ -374,4 +376,173 @@
 <script src="script.js"></script>
 <script src="scroll-section.js"></script>
 </body>
+<!-- Botones flotantes WhatsApp y llamada, esquina inferior derecha -->
+<div id="floating-buttons">
+  <a href="https://wa.me/595981755717" class="whatsapp-float" id="btn-whatsapp" target="_blank" title="Contáctanos por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <button class="whatsapp-float" id="btn-call" title="Llamar al Mariachi Farra">
+    <i class="fas fa-phone"></i>
+  </button>
+</div>
+<div id="call-modal" style="display:none;position:fixed;bottom:100px;right:40px;z-index:10000;background:#fff;border-radius:1em;box-shadow:0 2px 12px #0005;padding:1.2em 1.5em;">
+  <h4 style="margin:0 0 0.7em 0;font-family:'Roboto',sans-serif;font-size:1.1em;color:#007bff;">¿Con qué aplicación deseas llamar?</h4>
+  <a href="tel:+595981755717" style="display:block;margin-bottom:0.7em;color:#007bff;font-weight:bold;text-decoration:none;font-size:1.1em;" onclick="closeCallModal()"><i class="fas fa-phone"></i> Teléfono</a>
+  <a href="https://wa.me/595981755717" target="_blank" style="display:block;margin-bottom:0.7em;color:#25d366;font-weight:bold;text-decoration:none;font-size:1.1em;" onclick="closeCallModal()"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <a href="sms:+595981755717" style="display:block;color:#e4002b;font-weight:bold;text-decoration:none;font-size:1.1em;" onclick="closeCallModal()"><i class="fas fa-sms"></i> SMS</a>
+  <button onclick="closeCallModal()" style="margin-top:0.7em;padding:0.3em 1em;border:none;border-radius:0.5em;background:#eee;color:#333;font-weight:bold;cursor:pointer;">Cancelar</button>
+</div>
+<script>
+// Animación flotante
+  document.addEventListener('DOMContentLoaded', function() {
+    var btnWhatsapp = document.getElementById('btn-whatsapp');
+    var btnCall = document.getElementById('btn-call');
+    btnWhatsapp.style.animation = 'floatBtn 1.8s infinite alternate';
+    btnCall.style.animation = 'floatBtn 1.8s infinite alternate 0.5s';
+    // Scroll al formulario de contacto al hacer clic en el botón principal
+    var btnContacto = document.getElementById('btn-contacto');
+    if(btnContacto) {
+      btnContacto.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('contacto').scrollIntoView({behavior:'smooth'});
+      });
+    }
+  });
+  // Mostrar modal de aplicaciones para llamada
+  document.getElementById('btn-call').onclick = function() {
+    document.getElementById('call-modal').style.display = 'block';
+  };
+  function closeCallModal() {
+    document.getElementById('call-modal').style.display = 'none';
+  }
+</script>
+<style>
+#floating-buttons {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.whatsapp-float {
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #0005;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+#btn-call {
+  background: #007bff;
+  margin-top: 0;
+}
+.whatsapp-float:hover {
+  transform: scale(1.12) translateY(-4px);
+  box-shadow: 0 4px 16px #0007;
+}
+@keyframes floatBtn {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.08); }
+  100% { transform: translateY(0) scale(1); }
+}
+/* Texto 3D visible y centrado */
+#texto3d.text-3d-section {
+  width: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.stage {
+  position: relative;
+  width: 520px;
+  height: 220px;
+  margin: 0 auto;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+.layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: mex3d 5s infinite alternate ease-in-out;
+  animation-fill-mode: forwards;
+  transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+}
+.layer:after {
+  font: 160px/1.0 'Pacifico', 'Kaushan Script', Futura, 'Roboto', 'Trebuchet MS', Helvetica, sans-serif;
+  content: "Mariachi\A Farra";
+  white-space: pre;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  color: #fff;
+  letter-spacing: -2px;
+  text-shadow: 4px 0 10px rgba(0,0,0,0.13);
+}
+.layer:nth-child(n+2):after {
+  -webkit-text-stroke: 8px #e4002b;
+}
+.layer:nth-child(n+10):after {
+  -webkit-text-stroke: 8px rgba(0,104,71,0.25);
+}
+.layer:nth-child(n+11):after {
+  -webkit-text-stroke: 20px #e4002b;
+  text-shadow: 6px 0 6px #006847, 5px 5px 5px #fff, 0 6px 6px #e4002b;
+}
+.layer:nth-child(n+12):after {
+  -webkit-text-stroke: 20px #006847;
+}
+.layer:last-child:after {
+  -webkit-text-stroke: 22px rgba(255,255,255,0.1);
+}
+.layer:first-child:after {
+  color: #fff;
+  text-shadow: none;
+}
+.layer:nth-child(1):after { transform: translateZ(0px); }
+.layer:nth-child(2):after { transform: translateZ(-3px); }
+.layer:nth-child(3):after { transform: translateZ(-6px); }
+.layer:nth-child(4):after { transform: translateZ(-9px); }
+.layer:nth-child(5):after { transform: translateZ(-12px); }
+.layer:nth-child(6):after { transform: translateZ(-15px); }
+.layer:nth-child(7):after { transform: translateZ(-18px); }
+.layer:nth-child(8):after { transform: translateZ(-21px); }
+.layer:nth-child(9):after { transform: translateZ(-24px); }
+.layer:nth-child(10):after { transform: translateZ(-27px); }
+.layer:nth-child(11):after { transform: translateZ(-30px); }
+.layer:nth-child(12):after { transform: translateZ(-33px); }
+.layer:nth-child(13):after { transform: translateZ(-36px); }
+.layer:nth-child(14):after { transform: translateZ(-39px); }
+.layer:nth-child(15):after { transform: translateZ(-42px); }
+.layer:nth-child(16):after { transform: translateZ(-45px); }
+.layer:nth-child(17):after { transform: translateZ(-48px); }
+.layer:nth-child(18):after { transform: translateZ(-51px); }
+.layer:nth-child(19):after { transform: translateZ(-54px); }
+.layer:nth-child(20):after { transform: translateZ(-57px); }
+@keyframes mex3d {
+  0% {
+    transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+  }
+  100% {
+    transform: rotateY(-40deg) rotateX(-43deg);
+  }
+}
+</style>
 </html>
