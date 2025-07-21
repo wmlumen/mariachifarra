@@ -1783,3 +1783,128 @@ h4, h5, h6, p, span, div {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+<!-- ...existing code... -->
+<style>
+/* --- OPTIMIZACIÓN Y LIMPIEZA PARA MÓVIL --- */
+@media (max-width: 600px) {
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Navbar y menú hamburguesa */
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    width: 180px;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 16px #0002;
+    padding: 0.5em 0;
+    z-index: 1001;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .nav-link {
+    color: #e4002b !important;
+    padding: 1em 1.5em;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1em;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+
+  /* Botones flotantes compactos */
+  #floating-buttons {
+    bottom: 12px !important;
+    right: 12px !important;
+    gap: 10px !important;
+  }
+  .whatsapp-float {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.4rem !important;
+  }
+
+  /* Hero y texto 3D responsivo */
+  .hero-row-flex, .contact-content {
+    flex-direction: column !important;
+    gap: 1em !important;
+  }
+  .hero-content, .about-text, .contact-form, .faq-section {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  .stage {
+    width: 98vw !important;
+    max-width: 98vw !important;
+    height: 22vw !important;
+    min-height: 60px !important;
+    max-height: 90px !important;
+  }
+  .layer:after {
+    font-size: clamp(1.1rem, 8vw, 2.8rem) !important;
+    top: 2vw !important;
+  }
+  .hero-title { font-size: 1.5em !important; }
+  .hero-subtitle, .hero-description { font-size: 1em !important; }
+  .section-header h2, .final-content h2 { font-size: 1.3em !important; }
+  .stat h4 { font-size: 1.1em !important; }
+  .stat p { font-size: 0.95em !important; }
+  .category-card h3, .testimonial-author h4 { font-size: 1em !important; }
+  .btn, .btn-primary, .btn-secondary { font-size: 0.95em !important; padding: 0.7em 1.2em !important; }
+  .faq-section, .contact-form { min-width: 0 !important; width: 100% !important; }
+  .img-fluid, img, .mariachi-full-image, .about-main-image, .hero-main-image {
+    max-width: 90vw !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* Secciones y contenedores */
+  .container, .about .container, .contact .container, .final-section .container, .social-section .container {
+    max-width: 100vw !important;
+    padding: 0 1em !important;
+  }
+
+  .about-content, .contact-content, .repertoire-categories, .testimonials-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1em !important;
+  }
+
+  .stats {
+    grid-template-columns: 1fr !important;
+    gap: 1em !important;
+    margin-top: 1em !important;
+  }
+
+  .stat {
+    padding: 0.7rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Formularios y FAQ */
+  .contact-form, .faq-section {
+    min-width: 0 !important;
+    width: 100% !important;
+    padding: 1em !important;
+  }
+
+  /* Elimina márgenes/paddings excesivos */
+  section, .section-header, .final-section, .about, .contact, .repertoire, .testimonials {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+/* --- FIN DE OPTIMIZACIÓN MÓVIL --- */
+</style>
+<!-- ...existing code... -->
