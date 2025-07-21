@@ -1,0 +1,16 @@
+# Node
+node_modules/
+
+# Vercel
+.vercel/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Env
+.env
+.env.*
